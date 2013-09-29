@@ -1,84 +1,164 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>O_o.js by chronokz</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<title>O_o.js - Javascript Kit</title>
+	
+	<!-- <link rel="shortcut icon" type="image/png" href="favicon.png"> -->
+	<meta charset="utf-8">
 
-  </head>
-  <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.com/chronokz/O_o.js">View On GitHub</a></li>
-          <li class="downloads"><a href="https://github.com/chronokz/O_o.js/zipball/master">ZIP</a></li>
-          <li class="downloads"><a href="https://github.com/chronokz/O_o.js/tarball/master">TAR</a></li>
-          <li class="title">DOWNLOADS</li>
-        </nav>
-      </div><!-- end header -->
+	<!-- CSS Styles-->
+	<link href="http://getbootstrap.com/dist/css/bootstrap.css" type="text/css" rel="stylesheet">
+	<link href="http://getbootstrap.com/assets/css/docs.css" type="text/css" rel="stylesheet">
+	<link href="vendors/highlight.js/styles/tomorrow-night-eighties.css" type="text/css" rel="stylesheet">
+	<link href="css/demo.css" type="text/css" rel="stylesheet">
 
-    <div class="wrapper">
+	<link href="css/O_o.css" type="text/css" rel="stylesheet">
 
-      <section>
-        <div id="title">
-          <h1>O_o.js</h1>
-          <p>JavaScript Kit</p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/chronokz">chronokz</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
-        </div>
+	<!-- JS Scripts -->
+	<!-- 
+		Old jQuery for old browsers
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	-->
+	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+	<script src="http://getbootstrap.com/dist/js/bootstrap.js"></script>
+	<script src="vendors/highlight.js/highlight.pack.js"></script>
+	<script>
+	hljs.initHighlightingOnLoad();
+	</script>
 
-        <h3>
-<a name="modal-alert" class="anchor" href="#modal-alert"><span class="octicon octicon-link"></span></a>Modal Alert</h3>
+	<script src="js/O_o.js"></script>
 
-<div class="highlight highlight-javascript"><pre><span class="c1">// Show Alert (equal Show Success)</span>
-<span class="nx">O_o</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s1">'Simple message'</span><span class="p">);</span>
+</head>
 
-<span class="c1">// Show Success</span>
-<span class="nx">O_o</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s1">'Simple message'</span><span class="p">,</span> <span class="s1">'success'</span><span class="p">);</span>
+<body>
+	<h1>O_o.js <span class="muted">Shocked Javascript Kit</span></h1>
 
-<span class="c1">// Show Warning</span>
-<span class="nx">O_o</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s1">'Simple message'</span><span class="p">,</span> <span class="s1">'warning'</span><span class="p">);</span>
+	<!-- Modals -->
+	<div class="page-header">
+		<h3>Modal Alert</h3>
+	</div>
 
-<span class="c1">// Show Danger</span>
-<span class="nx">O_o</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s1">'Simple message'</span><span class="p">,</span> <span class="s1">'danger'</span><span class="p">);</span>
+	<div class="bs-example">
+		<button class="btn btn-success o_o-alert">Show Success</button>
+		<script>
+		$('.o_o-alert').click(function(){
+			O_o.alert('Simple message');
+		});
+		</script>
 
-<span class="c1">// Show Info</span>
-<span class="nx">O_o</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s1">'Simple message'</span><span class="p">,</span> <span class="s1">'info'</span><span class="p">);</span>
+		<button class="btn btn-danger o_o-alert_danger">Show Danger</button>
+		<script>
+		$('.o_o-alert_danger').click(function(){
+			O_o.alert('Simple message', 'danger');
+		});
+		</script>
 
-<span class="c1">// Show Primary</span>
-<span class="nx">O_o</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s1">'Simple message'</span><span class="p">,</span> <span class="s1">'primary'</span><span class="p">);</span>
+		<button class="btn btn-info o_o-alert_info">Show Info</button>
+		<script>
+		$('.o_o-alert_info').click(function(){
+			O_o.alert('Simple message', 'info');
+		});
+		</script>
 
-<span class="c1">// Show Default</span>
-<span class="nx">O_o</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s1">'Simple message'</span><span class="p">,</span> <span class="s1">'default'</span><span class="p">);</span>
+		<button class="btn btn-primary o_o-alert_primary">Show Primary</button>
+		<script>
+		$('.o_o-alert_primary').click(function(){
+			O_o.alert('Simple message', 'primary');
+		});
+		</script>
 
-<span class="c1">// Show Link</span>
-<span class="nx">O_o</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s1">'Simple message'</span><span class="p">,</span> <span class="s1">'link'</span><span class="p">);</span>
-</pre></div>
-      </section>
+		<button class="btn btn-warning o_o-alert_warning">Show Warning</button>
+		<script>
+		$('.o_o-alert_warning').click(function(){
+			O_o.alert('Simple message', 'warning');
+		});
+		</script>
 
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-44438850-1");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+		<button class="btn btn-default o_o-alert_default">Show Default</button>
+		<script>
+		$('.o_o-alert_default').click(function(){
+			O_o.alert('Simple message', 'default');
+		});
+		</script>
 
-  </body>
+		<button class="btn btn-link o_o-alert_link">Show Link</button>
+		<script>
+		$('.o_o-alert_link').click(function(){
+			O_o.alert('Simple message', 'link');
+		});
+		</script>
+	</div>
+	<div class="highlight javascript">
+	<pre>
+		<code>
+// Show Alert (equal Show Success)
+O_o.alert('Simple message');
+
+// Show Success
+O_o.alert('Simple message', 'success');
+
+// Show Warning
+O_o.alert('Simple message', 'warning');
+
+// Show Danger
+O_o.alert('Simple message', 'danger');
+
+// Show Info
+O_o.alert('Simple message', 'info');
+
+// Show Primary
+O_o.alert('Simple message', 'primary');
+
+// Show Default
+O_o.alert('Simple message', 'default');
+
+// Show Link
+O_o.alert('Simple message', 'link');
+		</code>
+	</pre>
+	</div>
+
+	<div class="page-header">
+		<h3>Modal Conrifrm</h3>
+	</div>
+	<div class="bs-example">
+		<button class="btn btn-danger o_o-confirm">Show Confirm</button>
+		<script>
+		$('.o_o-confirm').click(function(){
+			O_o.confirm('Simple message',
+				function(){
+					alert('true');
+				},
+				function(){
+					alert('false');
+				}
+
+			);
+		});
+		</script>
+	</div>
+	<div class="highlight javascript">
+	<pre>
+		<code>
+// Show Confirm
+O_o.confirm('Simple message',
+	function(){
+		alert('true');
+	},
+	function(){
+		alert('false');
+	}
+);
+		</code>
+	</pre>
+	</div>
+
+
+
+</body>
 </html>
+
+
