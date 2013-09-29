@@ -87,7 +87,7 @@
 				<button class="close close_alert" type="button">×</button>\
 				<div class="O_o-alert_message">' + message_text + '</div>\
 				<div class="buttons">\
-					<a class="btn btn-'+result+' close_alert">Закрыть</a>\
+					<a class="btn btn-'+result+' close_alert">Close</a>\
 				</div>\
 			</div></div>');
 		/*
@@ -110,8 +110,8 @@
 				<button class="close close_alert" type="button">×</button>\
 				<div class="O_o-alert_message">' + message_text + '</div>\
 				<div class="buttons">\
-					<a id="O_O-confirm-ok" class="btn btn-success close_alert">Да</a>\
-					<a id="O_O-confirm-not-ok" class="btn btn-inverse close_alert">Нет</a>\
+					<a id="O_O-confirm-ok" class="btn btn-success close_alert">Yes</a>\
+					<a id="O_O-confirm-not-ok" class="btn btn-inverse close_alert">No</a>\
 				</div>\
 			</div></div>');
 		
@@ -139,8 +139,8 @@
 				message_text + 
 				'<textarea class="prompt_area" name="' + prompt_area + '"></textarea>' +
 				'<div class="buttons">' +
-					'<input type="submit" value="Отправить" class="btn btn-success close_alert"> ' +
-					'<input type="reset" value="Отмена" class="btn btn-inverse close_alert"> ' +
+					'<input type="submit" value="Send" class="btn btn-success close_alert"> ' +
+					'<input type="reset" value="Cancel" class="btn btn-inverse close_alert"> ' +
 				'</div>' +
 			'</form></div></div>');
 		
@@ -173,7 +173,7 @@
 
 		if(link !== undefined)
 		{
-			link = '<div class="response_link"><a title="Открыть запрос в новом окне" href="' + link + '" target="blank">' + link + '</a></div>';
+			link = '<div class="response_link"><a title="Open query in new window" href="' + link + '" target="blank">' + link + '</a></div>';
 		}
 		else
 		{
