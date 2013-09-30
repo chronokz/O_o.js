@@ -37,7 +37,7 @@
 <body>
 	<h1>O_o.js <span class="muted">Shocked Javascript Kit</span></h1>
 
-	<!-- Modals -->
+<!-- Modal Alert -->
 	<div class="page-header">
 		<h3>Modal Alert</h3>
 	</div>
@@ -122,6 +122,7 @@ O_o.alert('Simple message', 'link');
 	</pre>
 	</div>
 
+<!-- Modal Conrifrm -->
 	<div class="page-header">
 		<h3>Modal Conrifrm</h3>
 	</div>
@@ -146,11 +147,58 @@ O_o.alert('Simple message', 'link');
 		<code>
 // Show Confirm
 O_o.confirm('Simple message',
+	// Callback for accept result
 	function(){
 		alert('true');
 	},
+
+	// Callback for reject result
 	function(){
 		alert('false');
+	}
+);
+		</code>
+	</pre>
+	</div>
+
+<!-- Modal Prompt -->
+	<div class="page-header">
+		<h3>Modal Prompt</h3>
+	</div>
+	<div class="bs-example">
+		<button class="btn btn-danger o_o-prompt">Show Prompt</button>
+		<script>
+		$('.o_o-prompt').click(function(){
+			O_o.prompt(
+				'This is prompt message',
+				'/form_action/',
+				'field_name',
+				function(form){
+					alert(form.find('.prompt_area').val());
+					return false;
+				}
+			);
+		});
+		</script>
+	</div>
+	<div class="highlight javascript">
+	<pre>
+		<code>
+// Show Prompt
+O_o.prompt(
+	// Text for window
+	'This is prompt message',
+
+	// Url action for form
+	'/form_action/',
+
+	// Name field
+	'field_name',
+
+	// Callback on submit form (optional)
+	function(form){
+		alert(form.find('.prompt_area').val());
+		return false;
 	}
 );
 		</code>
