@@ -140,17 +140,26 @@
 		});
 	};
 
-	O_o.prompt = function(message_text, form_action, prompt_area) {
+	O_o.prompt = function(message_text, form_action, prompt_area, callback) {
 		$('body').prepend(
-			'<div class="O_o-disable_window"><div class="alert"><form action="'+form_action+'" method="post">' + 
+			'<div class="O_o-disable_window"><div class="alert">\
+				<form class="prompt_form" action="'+form_action+'" method="post">' + 
 				'<button class="close close_alert" type="button">×</button>' +
 				message_text + 
 				'<textarea class="prompt_area" name="' + prompt_area + '"></textarea>' +
 				'<div class="buttons">' +
-					'<input type="submit" value="Send" class="btn btn-success close_alert"> ' +
+					'<input type="submit" value="Send" class="btn btn-success"> ' +
 					'<input type="reset" value="Cancel" class="btn btn-inverse close_alert"> ' +
 				'</div>' +
 			'</form></div></div>');
+
+		if (callback != undefined)
+		{
+			$('.prompt_form').submit(function(){
+				$('.close_alert').click();
+				return callback($(this));
+			});
+		}
 		
 		$('.close_alert').click(function(){
 			$('.O_o-disable_window').remove();
