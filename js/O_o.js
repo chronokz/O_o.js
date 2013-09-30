@@ -1,6 +1,14 @@
 (function(w, $){
 	w.O_o = {};
 
+	O_o.lang = {
+		alert_close: 'Close',
+		confirm_yes: 'Yes',
+		confirm_no: 'No',
+		prompt_send: 'Send',
+		prompt_cancel: 'Cancel'
+	};
+
 	O_o.ajax = function(options) {
 		var self = this;
 		this.options = options;
@@ -87,7 +95,7 @@
 				<button class="close close_alert" type="button">×</button>\
 				<div class="O_o-alert_message">' + message_text + '</div>\
 				<div class="buttons">\
-					<a class="btn btn-'+result+' close_alert">Close</a>\
+					<a class="btn btn-'+result+' close_alert">' + O_o.lang.alert_close + '</a>\
 				</div>\
 			</div></div>');
 		/*
