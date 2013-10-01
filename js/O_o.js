@@ -118,8 +118,8 @@
 				<button class="close close_alert" type="button">×</button>\
 				<div class="O_o-alert_message">' + message_text + '</div>\
 				<div class="buttons">\
-					<a id="O_O-confirm-ok" class="btn btn-success close_alert">' + O_o.lang.confirm_no + '</a>\
-					<a id="O_O-confirm-not-ok" class="btn btn-inverse close_alert">' + O_o.lang.confirm_yes + '</a>\
+					<a id="O_O-confirm-ok" class="btn btn-success close_alert">' + O_o.lang.confirm_yes + '</a>\
+					<a id="O_O-confirm-not-ok" class="btn btn-inverse close_alert">' + O_o.lang.confirm_no + '</a>\
 				</div>\
 			</div></div>');
 
