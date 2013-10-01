@@ -21,7 +21,7 @@
 				} else {
 					self.options.type = 'GET';
 				}
-			} 
+			}
 		}
 
 		// set DataType
@@ -79,8 +79,8 @@
 	O_o.parseJson =	function (data) {
 		if (typeof data === 'object') {
 			return data;
-		} 
-		return (new Function("return " + data))();	
+		}
+		return (new Function("return " + data))();
 	};
 
 	O_o.isset = function (object, search_value) {
@@ -118,11 +118,11 @@
 				<button class="close close_alert" type="button">×</button>\
 				<div class="O_o-alert_message">' + message_text + '</div>\
 				<div class="buttons">\
-					<a id="O_O-confirm-ok" class="btn btn-success close_alert">Yes</a>\
-					<a id="O_O-confirm-not-ok" class="btn btn-inverse close_alert">No</a>\
+					<a id="O_O-confirm-ok" class="btn btn-success close_alert">' + O_o.lang.confirm_no + '</a>\
+					<a id="O_O-confirm-not-ok" class="btn btn-inverse close_alert">' + O_o.lang.confirm_yes + '</a>\
 				</div>\
 			</div></div>');
-		
+
 		if (positive != undefined) {
 			$('#O_O-confirm-ok').click(function(){
 				positive();
@@ -130,7 +130,7 @@
 		}
 
 		if (negative != undefined) {
-			$('#O_O-confirm-not-ok').click(function(){		
+			$('#O_O-confirm-not-ok').click(function(){
 				negative();
 			});
 		}
@@ -143,13 +143,13 @@
 	O_o.prompt = function(message_text, form_action, prompt_area, callback) {
 		$('body').prepend(
 			'<div class="O_o-disable_window"><div class="alert">\
-				<form class="prompt_form" action="'+form_action+'" method="post">' + 
+				<form class="prompt_form" action="'+form_action+'" method="post">' +
 				'<button class="close close_alert" type="button">×</button>' +
-				message_text + 
+				message_text +
 				'<textarea class="prompt_area" name="' + prompt_area + '"></textarea>' +
 				'<div class="buttons">' +
-					'<input type="submit" value="Send" class="btn btn-success"> ' +
-					'<input type="reset" value="Cancel" class="btn btn-inverse close_alert"> ' +
+					'<input type="submit" value="' + O_o.lang.prompt_send + '" class="btn btn-success"> ' +
+					'<input type="reset" value="' + O_o.lang.prompt_cancel + '" class="btn btn-inverse close_alert"> ' +
 				'</div>' +
 			'</form></div></div>');
 
@@ -160,7 +160,7 @@
 				return callback($(this));
 			});
 		}
-		
+
 		$('.close_alert').click(function(){
 			$('.O_o-disable_window').remove();
 		});
@@ -214,7 +214,7 @@
 			self.fadeOut('slow', function(){ $(this).remove() } );
 		});
 
-		
+
 		var timer = setTimeout(function () {
 			self.fadeOut('slow', function(){ $(this).remove() } );
 		}, timeout);
