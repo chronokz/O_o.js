@@ -1,0 +1,50 @@
+.O_o-disable_window {
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+}
+
+.O_o-disable_window .alert {
+  border: 1px solid #b4b4b4;
+  width: 350px;
+  background: #f5f5f5;
+  color: #515151;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.5);
+  box-shadow: 0 3px 7px rgba(0,0,0,0.5);
+  position: absolute;
+  z-index: 2001;
+  left: 50%;
+  top: 50%;
+  margin-top: -55px;
+  margin-left: -175px;
+  text-align: center;
+  font-size: 14px;
+  padding: 20px 0;
+  line-height: normal;
+}
+
+.O_o-disable_window .alert .O_o-alert_message {
+  clear: both;
+}
+
+.O_o-disable_window .alert .prompt_area {
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+  height: 100px;
+  margin-top: 20px;
+}
+
+.O_o-disable_window .alert .close {
+  margin-top: -20px;
+  margin-right: 5px;
+}
+
+.O_o-disable_window .alert .buttons {
+  margin-top: 20px;
+}
