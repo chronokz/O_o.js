@@ -11,40 +11,6 @@
         short_month: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
     };
 
-    O_o.ajax = function(options) {
-        var self = this;
-        this.options = options;
-
-        // set type
-        if (self.options.data != undefined) {
-            if (self.options.type == undefined) {
-                if (self.options.data._method != undefined) {
-                    self.options.type = 'POST';
-                } else {
-                    self.options.type = 'GET';
-                }
-            }
-        }
-
-        // set DataType
-        if (self.options.dataType == undefined) {
-            self.options.dataType = 'JSON';
-        }
-
-        if (self.options.error == undefined) {
-            var self_url = self.options.url;
-            self.options.error = function(obj) {
-                O_o.hello('AJAX error: ' + self_url, 'red', 'fire', self.options.url, obj.responseText);
-                console.log(self.options.url);
-                console.error(obj.responseText);
-            }
-        }
-
-        // set Url
-        self.options.url = Url.ajax(self.options.url);
-        $.ajax(self.options);
-    };
-
     O_o.domain = function() {
         return window.location.host;
     };

@@ -474,4 +474,28 @@ O_o.stringJson({ x: 5 });            // '{"x":5}'
 O_o.stringJson({x: 5, y: 6});        // '{"x":5,"y":6}' or '{"y":6,"x":5}'
 </code></pre>
   </div>
+  <!-- Form-->
+  <div class="page-header">
+    <h3 id="go_forms">Form</h3>
+  </div>
+  <h4>Form filling</h4>
+  <div class="highlight javascript">
+    <pre>
+<code>// HTML code
+&lt;form action="someaction" id="form_for_fill"&gt;
+	&lt;input name="first_name"&gt;
+	&lt;input name="last_name"&gt;
+	&lt;input type="submit" value="Отправить"&gt;
+&lt;/form&gt;
+<br>
+// Javascript code
+&lt;script&gt;
+var data = {
+	first_name: 'Some name',
+	last_name: 'Some last name'
+}
+O_o.unserialize('#form_for_fill', data);
+&lt;/script&gt;
+</code></pre>
+  </div>
 </body>
