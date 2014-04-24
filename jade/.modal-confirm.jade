@@ -1,0 +1,28 @@
+h4 Modal Confirm
+div.bs-example
+	button.btn.btn-danger.O_o-confirm Show Confirm
+	script
+		$('.O_o-confirm').click(function(){
+			O_o.confirm('Simple message',
+				function(){
+					alert('true');
+				},
+				function(){
+					alert('false');
+				}
+
+			);
+		});
+div.highlight.javascript
+	pre
+		!{html}
+		<code>// Show Confirm
+		|O_o.confirm('Simple message',
+		|	function(){
+		|		alert('true');
+		|	},
+		|	function(){
+		|		alert('false');
+		|	}
+		|);
+		</code>

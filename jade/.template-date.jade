@@ -1,0 +1,56 @@
+h4 Get data of Date from Date-object / DATE / DATETIME
+div.bs-example
+	pre.O_o-date
+	script
+		var date = new Date();
+		$('.O_o-date').text(O_o.date(date, 
+			'Year: $Y\n'+
+			'Month: $M\n'+
+			'Day: $d\n'+
+			'Hour: $H\n'+
+			'Minute: $i\n'+
+			'Second: $s'
+			)
+		);
+	div.highlight
+		pre
+			code
+				i: b Allow paramters:
+				|&nbsp;
+				|&nbsp;
+				|<b>Day</b>
+				|$d - Day of the month, 2 digits with leading zeros
+				|$j - Day of the month without leading zeros
+				|&nbsp;
+				|<b>Month</b>
+				|$m - Numeric representation of a month, with leading zeros
+				|$n - Numeric representation of a month, without leading zeros
+				|$F - A full textual representation of a month, such as January or March
+				|$M - A short textual representation of a month, three letters
+				|&nbsp;
+				|<b>Year</b>
+				|$Y - A full numeric representation of a year, 4 digits
+				|$y - A two digit representation of a year
+				|&nbsp;
+				|<b>Hour</b>
+				|$H - 24-hour format of an hour with leading zeros
+				|$G - 24-hour format of an hour without leading zeros
+				|$h - 12-hour format of an hour with leading zeros
+				|$g - 12-hour format of an hour without leading zeros
+				|&nbsp;
+				|<b>Part of Day</b>
+				|$a - Lowercase Ante meridiem and Post meridiem
+				|$A - Uppercase Ante meridiem and Post meridiem
+				|&nbsp;
+				|<b>Minutes</b>
+				|$i - Minutes with leading zeros
+				|&nbsp;
+				|<b>Seconds</b>
+				|$s - Seconds, with leading zeros
+div.highlight.javascript
+	pre
+		!{html}
+		<code>// Several examples of usage
+		|O_o.date('2014-03-31 10:13:05', '$H:$i | $M $d, $Y'); // 10:13 | Mar 31, 2014
+		|O_o.date(new Date(), '$Y-$m-$d $H:$i:$s');            // 2014-03-31 10:13:05
+		</code>

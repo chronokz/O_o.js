@@ -1,6 +1,21 @@
+body_width = 960px
+body_padding = 20px
+
+::selection
+	background #FF9500
+	color #fff
+
+html
+	background url("../img/back.png") fixed
+
 body
-	width 960px
-	margin 0 auto
+	width body_width
+	margin 40px auto
+	margin-top 100px
+	border-radius 5px
+	box-shadow 1px 1px 20px #000
+	padding body_padding
+	padding-top 0
 
 .muted
 	color #bbb
@@ -9,3 +24,45 @@ body
 	background #2d2d2d
 	color #cccccc
 	white-space pre-wrap
+
+.navbar-fixed-top
+	.container-fluid
+		width body_width
+
+.header
+	padding 10px 0
+
+.page-header
+	h3
+		width body_width
+		background #3B3B3B
+		color #fff
+		padding 15px body_padding
+		margin-left - body_padding
+
+#ribbon
+	overflow hidden
+	position absolute
+	top 0
+	right 0
+	height 170px
+	width 200px
+	.line
+		text-align center
+		white-space nowrap
+		transform rotate(45deg)
+		background-color #b3d107
+		padding 1px 0
+		overflow hidden
+		box-shadow 1px 1px 3px rgba(0,0,0,.3)
+		position relative
+		top 45px
+		width 250px
+	a
+		color #fff
+		border 1px solid #d5e965
+		display block
+		margin .05em 0
+		padding .5em 3.5em
+		text-align center
+		text-decoration none

@@ -4,169 +4,172 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-	<title>O_o.js - Javascript Kit</title>
-	
-	<!-- <link rel="shortcut icon" type="image/png" href="favicon.png"> -->
-	<meta charset="utf-8">
-
-	<!-- CSS Styles-->
-	<link href="http://getbootstrap.com/dist/css/bootstrap.css" type="text/css" rel="stylesheet">
-	<link href="http://getbootstrap.com/assets/css/docs.css" type="text/css" rel="stylesheet">
-	<link href="vendors/highlight.js/styles/tomorrow-night-eighties.css" type="text/css" rel="stylesheet">
-	<link href="css/demo.css" type="text/css" rel="stylesheet">
-
-	<link href="https://rawgithub.com/chronokz/O_o.js/master/css/O_o.css" type="text/css" rel="stylesheet">
-
-	<!-- JS Scripts -->
-	<!-- 
-		Old jQuery for old browsers
-		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-	-->
-	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-	<script src="http://getbootstrap.com/dist/js/bootstrap.js"></script>
-	<script src="vendors/highlight.js/highlight.pack.js"></script>
-	<script>
-	hljs.initHighlightingOnLoad();
-	</script>
-
-	<script src="https://rawgithub.com/chronokz/O_o.js/master/js/O_o.js" type="text/javascript"></script>
-
+  <title>O_o.js - Javascript Kit</title>
+  <meta charset="utf-8">
+  <!-- jQuery-->
+  <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+  <!-- Bootstrap-->
+  <link href="http://getbootstrap.com/dist/css/bootstrap.css" type="text/css" rel="stylesheet">
+  <link href="http://getbootstrap.com/assets/css/docs.css" type="text/css" rel="stylesheet">
+  <script src="http://getbootstrap.com/dist/js/bootstrap.js"></script>
+  <!-- Highlight.js-->
+  <link href="vendors/highlight.js/styles/tomorrow-night-eighties.css" type="text/css" rel="stylesheet">
+  <script src="vendors/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- Demo-->
+  <link href="css/demo.css" type="text/css" rel="stylesheet">
+  <!-- O_o.js-->
+  <link href="vendors/O_o.js/O_o.css" type="text/css" rel="stylesheet">
+  <script src="vendors/O_o.js/O_o.js"></script>
+  <script src="vendors/O_o.js/O_o.ru.js"></script>
 </head>
-
-<body>
-	<h1>O_o.js <span class="muted">Shocked Javascript Kit</span></h1>
-
-	<!-- Including -->
-	<div class="page-header">
-		<h3>Include into page</h3>
-	</div>
-	<div class="bs-example">
-		<a href="https://raw.github.com/chronokz/O_o.js/master/css/O_o.css">O_o.css</a>
-		<br>
-		<a href="https://raw.github.com/chronokz/O_o.js/master/js/O_o.js">O_o.js</a>
-	</div>
-	<div class="highlight html">
-	<pre>
-		<code>
-&lt;!-- Use O_o.css --&gt;
+<body data-spy="scroll" data-target=".navbar-default">
+  <nav role="navigation" class="navbar navbar-default navbar-fixed-top navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header"><a href="#top" class="navbar-brand">O_o.js</a></div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="#go_modals">Modal</a></li>
+          <li><a href="#go_scrolls">Scroll</a></li>
+          <li><a href="#go_translates">Translate</a></li>
+          <li><a href="#go_urls">Url</a></li>
+          <li><a href="#go_keys">Keys</a></li>
+          <li><a href="#go_templates">Template</a></li>
+          <li><a href="#go_json">JSON</a></li>
+          <li><a href="#go_forms">Form</a></li>
+        </ul>
+        <!--form.navbar-form.navbar-right(role="search")
+        <div class="form-group">
+          <input type="text" placeholder="Search" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+        -->
+      </div>
+    </div>
+  </nav>
+  <div id="ribbon">
+    <div class="line"><a href="https://github.com/chronokz/O_o.js">Fork me on GitHub</a></div>
+  </div>
+  <div class="header">
+    <h1>O_o.js&nbsp;<span class="muted">Shocked Javascript Kit</span></h1>
+  </div>
+  <!-- Include-->
+  <div class="page-header">
+    <h3>Include Into Page</h3>
+  </div>
+  <div class="bs-example"><a href="https://raw.github.com/chronokz/O_o.js/master/css/O_o.css">O_o.css</a><br><a href="https://raw.github.com/chronokz/O_o.js/master/js/O_o.js">O_o.js</a></div>
+  <div class="highlight html">
+    <pre>
+<code>&lt;!-- Use O_o.css --&gt;
 &lt;link href="css/O_o.css" type="text/css" rel="stylesheet"&gt;
-
+&nbsp;
 &lt;!-- Use jQuery --&gt;
 &lt;script src="http://code.jquery.com/jquery-latest.min.js"&gt;&lt;/script&gt;
 &lt;!-- Use O_o.js --&gt;
 &lt;script src="js/O_o.js"&gt;&lt;/script&gt;
-		</code>
-	</pre>
-	</div>
-
-	<!-- Modals -->
-	<div class="page-header">
-		<h3>Modal Alert</h3>
-	</div>
-
-	<div class="bs-example">
-		<button class="btn btn-success o_o-alert">Show Success</button>
-		<script>
-		$('.o_o-alert').click(function(){
-			O_o.alert('Simple message');
-		});
-		</script>
-
-		<button class="btn btn-danger o_o-alert_danger">Show Danger</button>
-		<script>
-		$('.o_o-alert_danger').click(function(){
-			O_o.alert('Simple message', 'danger');
-		});
-		</script>
-
-		<button class="btn btn-info o_o-alert_info">Show Info</button>
-		<script>
-		$('.o_o-alert_info').click(function(){
-			O_o.alert('Simple message', 'info');
-		});
-		</script>
-
-		<button class="btn btn-primary o_o-alert_primary">Show Primary</button>
-		<script>
-		$('.o_o-alert_primary').click(function(){
-			O_o.alert('Simple message', 'primary');
-		});
-		</script>
-
-		<button class="btn btn-warning o_o-alert_warning">Show Warning</button>
-		<script>
-		$('.o_o-alert_warning').click(function(){
-			O_o.alert('Simple message', 'warning');
-		});
-		</script>
-
-		<button class="btn btn-default o_o-alert_default">Show Default</button>
-		<script>
-		$('.o_o-alert_default').click(function(){
-			O_o.alert('Simple message', 'default');
-		});
-		</script>
-
-		<button class="btn btn-link o_o-alert_link">Show Link</button>
-		<script>
-		$('.o_o-alert_link').click(function(){
-			O_o.alert('Simple message', 'link');
-		});
-		</script>
-	</div>
-	<div class="highlight javascript">
-	<pre>
-		<code>
-// Show Alert (equal Show Success)
+</code></pre>
+  </div>
+  <!-- Modals-->
+  <div class="page-header">
+    <h3 id="go_modals">Modals</h3>
+  </div>
+  <h4>Modal Alert</h4>
+  <div class="bs-example">
+    <button class="btn btn-success O_o-alert">Show Success</button>
+    <script>
+      $('.O_o-alert').click(function(){
+       O_o.alert('Simple message');
+      });
+    </script>
+    <button class="btn btn-danger O_o-alert_danger">Show Danger</button>
+    <script>
+      $('.O_o-alert_danger').click(function(){
+       O_o.alert('Simple message', 'danger');
+      });
+      
+    </script>
+    <button class="btn btn-info O_o-alert_info">Show Info</button>
+    <script>
+      $('.O_o-alert_info').click(function(){
+       O_o.alert('Simple message', 'info');
+      });
+      
+    </script>
+    <button class="btn btn-primary O_o-alert_primary">Show Primary</button>
+    <script>
+      $('.O_o-alert_primary').click(function(){
+       O_o.alert('Simple message', 'primary');
+      });
+      
+    </script>
+    <button class="btn btn-warning O_o-alert_warning">Show Warning</button>
+    <script>
+      $('.O_o-alert_warning').click(function(){
+       O_o.alert('Simple message', 'warning');
+      });
+      
+    </script>
+    <button class="btn btn-default O_o-alert_default">Show Default</button>
+    <script>
+      $('.O_o-alert_default').click(function(){
+       O_o.alert('Simple message', 'default');
+      });
+      
+    </script>
+    <button class="btn btn-link O_o-alert_link">Show Link</button>
+    <script>
+      $('.O_o-alert_link').click(function(){
+       O_o.alert('Simple message', 'link');
+      });
+    </script>
+  </div>
+  <div class="highlight html">
+    <pre>
+<code>// Show Alert (equal Show Success)
 O_o.alert('Simple message');
-
+&nbsp;
 // Show Success
 O_o.alert('Simple message', 'success');
-
+&nbsp;
 // Show Warning
 O_o.alert('Simple message', 'warning');
-
+&nbsp;
 // Show Danger
 O_o.alert('Simple message', 'danger');
-
+&nbsp;
 // Show Info
 O_o.alert('Simple message', 'info');
-
+&nbsp;
 // Show Primary
 O_o.alert('Simple message', 'primary');
-
+&nbsp;
 // Show Default
 O_o.alert('Simple message', 'default');
-
+&nbsp;
 // Show Link
 O_o.alert('Simple message', 'link');
-		</code>
-	</pre>
-	</div>
-
-	<div class="page-header">
-		<h3>Modal Confirm</h3>
-	</div>
-	<div class="bs-example">
-		<button class="btn btn-danger o_o-confirm">Show Confirm</button>
-		<script>
-		$('.o_o-confirm').click(function(){
-			O_o.confirm('Simple message',
-				function(){
-					alert('true');
-				},
-				function(){
-					alert('false');
-				}
-
-			);
-		});
-		</script>
-	</div>
-	<div class="highlight javascript">
-	<pre>
-		<code>
-// Show Confirm
+</code></pre>
+  </div>
+  <h4>Modal Confirm</h4>
+  <div class="bs-example">
+    <button class="btn btn-danger O_o-confirm">Show Confirm</button>
+    <script>
+      $('.O_o-confirm').click(function(){
+       O_o.confirm('Simple message',
+        function(){
+         alert('true');
+        },
+        function(){
+         alert('false');
+        }
+        
+       );
+      });
+    </script>
+  </div>
+  <div class="highlight javascript">
+    <pre>
+<code>// Show Confirm
 O_o.confirm('Simple message',
 	function(){
 		alert('true');
@@ -175,13 +178,300 @@ O_o.confirm('Simple message',
 		alert('false');
 	}
 );
-		</code>
-	</pre>
-	</div>
-
-
-
+</code></pre>
+  </div>
+  <h4>Modal Prompt</h4>
+  <div class="bs-example">
+    <button class="btn btn-danger O_o-prompt">Show Prompt</button>
+    <script>
+      $('.O_o-prompt').click(function(){
+       O_o.prompt('Simple Message', '#', 'field_name', function(){
+        alert('Hello, I am callback function');
+        return false;
+       });
+      });
+    </script>
+  </div>
+  <div class="highlight javascript">
+    <pre>
+<code>// Show Prompt
+O_o.prompt(
+	'Simple Message',
+	'the_path/where/the_data/will_be.transferred',
+	'parameter_name',
+	function () {
+		alert('I am callback and I was sent');
+		return false; // If you return false, the page will not be refreshed 
+	}
+);
+</code></pre>
+  </div>
+  <!-- Scrolls-->
+  <div class="page-header">
+    <h3 id="go_scrolls">Smooth Scrolls</h3>
+  </div>
+  <h4>Scroll From/To Top</h4>
+  <div class="bs-example">
+    <button class="btn btn-danger O_o-scrollTop">Go to top</button>
+    <script>
+      $('.O_o-scrollTop').click(function(){
+       O_o.scrollTop();
+      });
+      
+    </script>
+    <button class="btn btn-danger O_o-scrollTopN">Go to n-pixel from top</button>
+    <script>
+      $('.O_o-scrollTopN').click(function(){
+       O_o.scrollTop(200);
+      });
+    </script>
+  </div>
+  <div class="highlight javascript">
+    <pre>
+<code>// Go to top
+O_o.scrollTop();
+&nbsp;
+// Go to 200 pixel from top
+O_o.scrollTop(200);
+</code></pre>
+  </div>
+  <h4>Scroll To Bottom</h4>
+  <div class="bs-example">
+    <button class="btn btn-danger O_o-scrollBottom">Go to bottom</button>
+    <script>
+      $('.O_o-scrollBottom').click(function(){
+       O_o.scrollBottom();
+      });
+    </script>
+  </div>
+  <div class="highlight javascript">
+    <pre>
+<code>// Go to top
+O_o.scrollBottom();
+</code></pre>
+  </div>
+  <h4>Scroll To Element</h4>
+  <div class="bs-example">
+    <button class="btn btn-danger O_o-scrollElement">Go to some element</button>
+    <script>
+      $('.O_o-scrollElement').click(function(){
+       O_o.scrollElement('#go_scrolls');
+      });
+    </script>
+  </div>
+  <div class="highlight javascript">
+    <pre>
+<code>// Go to element with class "header"
+O_o.scrollElement('.header');
+</code></pre>
+  </div>
+  <!-- Translates-->
+  <div class="page-header">
+    <h3 id="go_translates">Translates / Change languages</h3>
+  </div>
+  <h4>How to translate</h4>
+  <div class="highlight html">
+    <pre>
+<code>&lt;!-- For example: To translate into russian, add this after the line which included O_o.js --&gt;
+&lt;script src="js/O_o.ru.js"&gt;&lt;/script&gt;
+</code></pre>
+  </div>
+  <h4>How to create file translate for my language</h4>
+  <div class="highlight javascript">
+    <pre>
+<code>// Need create and include file js-file with next content: 
+O_o.lang = {
+	alert_close: 'Text for close button',
+	confirm_yes: 'Say "Yes"',
+	confirm_no: 'Say "No"',
+	prompt_send: 'Send for prompt',
+	prompt_cancel: 'Cancel for prompt'
+};
+</code></pre>
+  </div>
+  <!-- Keys-->
+  <div class="page-header">
+    <h3 id="go_keys">Keys</h3>
+  </div>
+  <h4>KeyCodes</h4>
+  <div class="highlight javascript">
+    <pre>
+<code>// To get the key code while pressing
+$(document).keyup(function(e)
+{
+	var key = O_o.keyCode(e);
+});
+</code></pre>
+  </div>
+  <!-- Urls-->
+  <div class="page-header">
+    <h3 id="go_urls">Redirects URL, Domain, Hash</h3>
+  </div>
+  <h4>Get Domain-name</h4>
+  <div class="highlight javascript">
+    <pre>
+<code>// The variable "domainName" value will be equal current domain name
+var domainName = O_o.domain();
+</code></pre>
+  </div>
+  <h4>Get URL-address & Redirect</h4>
+  <div class="highlight javascript">
+    <pre>
+<code>// Get current URL:
+var domainName = O_o.url();
+// Redirect to Wikipedia
+O_o.url("http://www.wikipedia.org");
+</code></pre>
+  </div>
+  <h4>Get & Set Hash</h4>
+  <div class="highlight javascript">
+    <pre>
+<code>// For example get hash #var1=test1&var2=test2
+var hash = O_o.hash();
+//This will return value:
+var hash = "var1=test1&var2=test2";
+&nbsp;
+// For example set hash
+O_o.hash('new_any_hash');
+</code></pre>
+  </div>
+  <h4>Parse paramters from Hash</h4>
+  <div class="highlight javascript">
+    <pre>
+<code>// The settings should be passed to Get-params. For example #var1=test1&var2=test2
+var obj = O_o.hashParams();
+//This will return object:
+var obj = {
+	"var1": "test1",
+	"var2": "test2"
+};
+</code></pre>
+  </div>
+  <!-- Templates-->
+  <div class="page-header">
+    <h3 id="go_templates">Templates</h3>
+  </div>
+  <h4>Add active links into text</h4>
+  <div class="highlight javascript">
+    <pre>
+<code>// For replacing text with inactive links, to text with active links
+var text = 'example text http://yandex.kz/yandsearch?text=наш%20лось%20яндекс&clid=9582&lr=162 and more www.google.com';
+var text_with_link = O_o.linkInsert(text);
+</code></pre>
+  </div>
+  <h4>Add zero before num</h4>
+  <div class="highlight javascript">
+    <pre>
+<code>// Several examples
+var num_for_converting = '02',
+    length_for_result  = 5;
+O_o.zerofill(num_for_converting, length_for_result); // '00005';
+O_o.zerofill(10, 3); // '010';
+</code></pre>
+  </div>
+  <h4>Get data of Date from Date-object / DATE / DATETIME</h4>
+  <div class="bs-example">
+    <pre class="O_o-date"></pre>
+    <script>
+      var date = new Date();
+      $('.O_o-date').text(O_o.date(date, 
+       'Year: $Y\n'+
+       'Month: $M\n'+
+       'Day: $d\n'+
+       'Hour: $H\n'+
+       'Minute: $i\n'+
+       'Second: $s'
+       )
+      );
+    </script>
+    <div class="highlight">
+      <pre><code><i><b>Allow paramters:</b></i>&nbsp;
+          &nbsp;
+          <b>Day</b>
+          $d - Day of the month, 2 digits with leading zeros
+          $j - Day of the month without leading zeros
+          &nbsp;
+          <b>Month</b>
+          $m - Numeric representation of a month, with leading zeros
+          $n - Numeric representation of a month, without leading zeros
+          $F - A full textual representation of a month, such as January or March
+          $M - A short textual representation of a month, three letters
+          &nbsp;
+          <b>Year</b>
+          $Y - A full numeric representation of a year, 4 digits
+          $y - A two digit representation of a year
+          &nbsp;
+          <b>Hour</b>
+          $H - 24-hour format of an hour with leading zeros
+          $G - 24-hour format of an hour without leading zeros
+          $h - 12-hour format of an hour with leading zeros
+          $g - 12-hour format of an hour without leading zeros
+          &nbsp;
+          <b>Part of Day</b>
+          $a - Lowercase Ante meridiem and Post meridiem
+          $A - Uppercase Ante meridiem and Post meridiem
+          &nbsp;
+          <b>Minutes</b>
+          $i - Minutes with leading zeros
+          &nbsp;
+          <b>Seconds</b>
+          $s - Seconds, with leading zeros</code></pre>
+    </div>
+  </div>
+  <div class="highlight javascript">
+    <pre>
+<code>// Several examples of usage
+O_o.date('2014-03-31 10:13:05', '$H:$i | $M $d, $Y'); // 10:13 | Mar 31, 2014
+O_o.date(new Date(), '$Y-$m-$d $H:$i:$s');            // 2014-03-31 10:13:05
+</code></pre>
+  </div>
+  <h4>HTML Template</h4>
+  <div class="highlight javascript">
+    <pre>
+<code>&lt;div id="selector_for_insert"&gt;&lt;/div&gt;
+&lt;div class="class_for_clone"&gt;
+	&lt;span class="date"&gt;${date}&lt;/span&gt;
+	&lt;b&gt;${user.first_name} ${user.last_name}&lt;/b&gt;&lt;br&gt;
+	&lt;span class="gender"&gt;${user.gender}&lt;/span&gt;&lt;br&gt;
+&lt;/div&gt;
+&lt;script&gt;
+var data = {
+	user: {
+		first_name: 'Alexander',
+		last_name: 'Mikhailov',
+		gender: 'Male'
+	},
+	date: '24.04.2014'
+};
+O_o.template('class_for_clone', '#selector_for_insert', data);
+&lt;/script&gt;
+</code></pre>
+  </div>
+  <!-- JSON-->
+  <div class="page-header">
+    <h3 id="go_json">JSON</h3>
+  </div>
+  <h4>Cross-browser JSON.parse()</h4>
+  <div class="highlight javascript">
+    <pre>
+<code>// Use like JSON.parse()
+O_o.parseJson('{}');              // {}
+O_o.parseJson('true');            // true
+O_o.parseJson('"foo"');           // "foo"
+O_o.parseJson('[1, 5, "false"]'); // [1, 5, "false"]
+O_o.parseJson('null');            // null
+</code></pre>
+  </div>
+  <h4>Cross-browser JSON.stringify()</h4>
+  <div class="highlight javascript">
+    <pre>
+<code>// Use like JSON.stringify()
+O_o.stringJson({});                  // '{}'
+O_o.stringJson(true);                // 'true'
+O_o.stringJson("foo");               // '"foo"'
+O_o.stringJson([1, "false", false]); // '[1,"false",false]'
+O_o.stringJson({ x: 5 });            // '{"x":5}'
+O_o.stringJson({x: 5, y: 6});        // '{"x":5,"y":6}' or '{"y":6,"x":5}'
+</code></pre>
+  </div>
 </body>
-</html>
-
-

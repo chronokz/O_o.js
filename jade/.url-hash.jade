@@ -1,0 +1,24 @@
+h4 Get & Set Hash
+div.highlight.javascript
+	pre
+		!{html}
+		<code>// For example get hash #var1=test1&var2=test2
+		|var hash = O_o.hash();
+		|//This will return value:
+		|var hash = "var1=test1&var2=test2";
+		|&nbsp;
+		|// For example set hash
+		|O_o.hash('new_any_hash');
+		</code>
+h4 Parse paramters from Hash
+div.highlight.javascript
+	pre
+		!{html}
+		<code>// The settings should be passed to Get-params. For example #var1=test1&var2=test2
+		|var obj = O_o.hashParams();
+		|//This will return object:
+		|var obj = {
+		|	"var1": "test1",
+		|	"var2": "test2"
+		|};
+		</code>

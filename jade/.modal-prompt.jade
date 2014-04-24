@@ -1,0 +1,24 @@
+h4 Modal Prompt
+div.bs-example
+	button.btn.btn-danger.O_o-prompt Show Prompt
+	script
+		$('.O_o-prompt').click(function(){
+			O_o.prompt('Simple Message', '#', 'field_name', function(){
+				alert('Hello, I am callback function');
+				return false;
+			});
+		});
+div.highlight.javascript
+	pre
+		!{html}
+		<code>// Show Prompt
+		|O_o.prompt(
+		|	'Simple Message',
+		|	'the_path/where/the_data/will_be.transferred',
+		|	'parameter_name',
+		|	function () {
+		|		alert('I am callback and I was sent');
+		|		return false; // If you return false, the page will not be refreshed 
+		|	}
+		|);
+		</code>

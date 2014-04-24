@@ -1,0 +1,69 @@
+h4 Modal Alert
+div.bs-example
+	button.btn.btn-success.O_o-alert Show Success
+	script
+		$('.O_o-alert').click(function(){
+			O_o.alert('Simple message');
+		});
+	button.btn.btn-danger.O_o-alert_danger Show Danger
+	script
+		$('.O_o-alert_danger').click(function(){
+			O_o.alert('Simple message', 'danger');
+		});
+
+	button.btn.btn-info.O_o-alert_info Show Info
+	script
+		$('.O_o-alert_info').click(function(){
+			O_o.alert('Simple message', 'info');
+		});
+
+	button.btn.btn-primary.O_o-alert_primary Show Primary
+	script
+		$('.O_o-alert_primary').click(function(){
+			O_o.alert('Simple message', 'primary');
+		});
+
+	button.btn.btn-warning.O_o-alert_warning Show Warning
+	script
+		$('.O_o-alert_warning').click(function(){
+			O_o.alert('Simple message', 'warning');
+		});
+
+	button.btn.btn-default.O_o-alert_default Show Default
+	script
+		$('.O_o-alert_default').click(function(){
+			O_o.alert('Simple message', 'default');
+		});
+
+	button.btn.btn-link.O_o-alert_link Show Link
+	script
+		$('.O_o-alert_link').click(function(){
+			O_o.alert('Simple message', 'link');
+		});
+div.highlight.html
+	pre
+		!{html}
+		<code>// Show Alert (equal Show Success)
+		|O_o.alert('Simple message');
+		|&nbsp;
+		|// Show Success
+		|O_o.alert('Simple message', 'success');
+		|&nbsp;
+		|// Show Warning
+		|O_o.alert('Simple message', 'warning');
+		|&nbsp;
+		|// Show Danger
+		|O_o.alert('Simple message', 'danger');
+		|&nbsp;
+		|// Show Info
+		|O_o.alert('Simple message', 'info');
+		|&nbsp;
+		|// Show Primary
+		|O_o.alert('Simple message', 'primary');
+		|&nbsp;
+		|// Show Default
+		|O_o.alert('Simple message', 'default');
+		|&nbsp;
+		|// Show Link
+		|O_o.alert('Simple message', 'link');
+		</code>

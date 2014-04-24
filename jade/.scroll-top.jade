@@ -1,0 +1,22 @@
+h4 Scroll From/To Top
+div.bs-example
+	button.btn.btn-danger.O_o-scrollTop Go to top
+	script
+		$('.O_o-scrollTop').click(function(){
+			O_o.scrollTop();
+		});
+
+	button.btn.btn-danger.O_o-scrollTopN Go to n-pixel from top
+	script
+		$('.O_o-scrollTopN').click(function(){
+			O_o.scrollTop(200);
+		});
+div.highlight.javascript
+	pre
+		!{html}
+		<code>// Go to top
+		|O_o.scrollTop();
+		|&nbsp;
+		|// Go to 200 pixel from top
+		|O_o.scrollTop(200);
+		</code>

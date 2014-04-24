@@ -1,0 +1,92 @@
+include .header.jade
+
+body(data-spy="scroll", data-target=".navbar-default")
+	include .menu.jade
+	#ribbon
+		.line
+			a(href="https://github.com/chronokz/O_o.js") Fork me on GitHub
+	include .logo.jade
+
+	// Include
+	include .include.jade
+
+	// Modals
+	.page-header: h3#go_modals Modals
+	include .modal-alert.jade
+	include .modal-confirm.jade
+	include .modal-prompt.jade
+
+	// Scrolls
+	.page-header: h3#go_scrolls Smooth Scrolls
+	include .scroll-top.jade
+	include .scroll-bottom.jade
+	include .scroll-element.jade
+
+	// Translates
+	.page-header: h3#go_translates Translates / Change languages
+	include .translate-include.jade
+	include .translate-customize.jade
+
+	// Keys
+	.page-header: h3#go_keys Keys
+	include .key-code.jade
+
+	// Urls
+	.page-header: h3#go_urls Redirects URL, Domain, Hash
+	include .url-domain.jade
+	include .url-redirect.jade
+	include .url-hash.jade
+
+	// Templates
+	.page-header: h3#go_templates Templates
+	include .template-link.jade
+	include .template-zero.jade
+	include .template-date.jade
+	h4 HTML Template
+	div.highlight.javascript
+		pre
+			!{html}
+			<code>&lt;div id="selector_for_insert"&gt;&lt;/div&gt;
+			|&lt;div class="class_for_clone"&gt;
+			|	&lt;span class="date"&gt;${date}&lt;/span&gt;
+			|	&lt;b&gt;${user.first_name} ${user.last_name}&lt;/b&gt;&lt;br&gt;
+			|	&lt;span class="gender"&gt;${user.gender}&lt;/span&gt;&lt;br&gt;
+			|&lt;/div&gt;
+			|&lt;script&gt;
+			|var data = {
+			|	user: {
+			|		first_name: 'Alexander',
+			|		last_name: 'Mikhailov',
+			|		gender: 'Male'
+			|	},
+			|	date: '24.04.2014'
+			|};
+			|O_o.template('class_for_clone', '#selector_for_insert', data);
+			|&lt;/script&gt;
+			</code>
+
+	// JSON
+	.page-header: h3#go_json JSON
+	h4 Cross-browser JSON.parse()
+	div.highlight.javascript
+		pre
+			!{html}
+			<code>// Use like JSON.parse()
+			|O_o.parseJson('{}');              // {}
+			|O_o.parseJson('true');            // true
+			|O_o.parseJson('"foo"');           // "foo"
+			|O_o.parseJson('[1, 5, "false"]'); // [1, 5, "false"]
+			|O_o.parseJson('null');            // null
+			</code>
+	h4 Cross-browser JSON.stringify()
+	div.highlight.javascript
+		pre
+			!{html}
+			<code>// Use like JSON.stringify()
+			|O_o.stringJson({});                  // '{}'
+			|O_o.stringJson(true);                // 'true'
+			|O_o.stringJson("foo");               // '"foo"'
+			|O_o.stringJson([1, "false", false]); // '[1,"false",false]'
+			|O_o.stringJson({ x: 5 });            // '{"x":5}'
+			|O_o.stringJson({x: 5, y: 6});        // '{"x":5,"y":6}' or '{"y":6,"x":5}'
+			</code>

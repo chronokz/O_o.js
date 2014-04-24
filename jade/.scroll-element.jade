@@ -1,0 +1,13 @@
+h4 Scroll To Element
+div.bs-example
+	button.btn.btn-danger.O_o-scrollElement Go to some element
+	script
+		$('.O_o-scrollElement').click(function(){
+			O_o.scrollElement('#go_scrolls');
+		});
+div.highlight.javascript
+	pre
+		!{html}
+		<code>// Go to element with class "header"
+		|O_o.scrollElement('.header');
+		</code>
