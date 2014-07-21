@@ -265,7 +265,7 @@
                 clone.html(clone.html().replace('${' + pre + ins + '}', data[ins]));
             }
         }
-    }
+    };
 
     O_o.linkInsert = function(some_text) {
         return some_text.replace(/((https?:\/\/)|(www\.))[^\s]*/g,
