@@ -181,7 +181,7 @@
             var s = O_o.zerofill(date.getSeconds()),
                 i = date.getMinutes(),
                 h = O_o.zerofill(date.getHours()),
-                d = date.getDate(),
+                d = O_o.zerofill(date.getDate()),
                 m = O_o.zerofill(date.getMonth() + 1),
                 y = date.getFullYear();
 
