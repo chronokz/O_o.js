@@ -347,6 +347,19 @@ var obj = {
 };
 </code></pre>
   </div>
+  <h4>Parse GET URL parameters</h4>
+  <div class="highlight javascript">
+    <pre>
+<code>
+&lt;script&gt;
+    var url = 'http://some.fancy.url?with=params
+    // Get all parameters
+    var params = O_o.getParams(url);
+    // Get one parameter
+    var param = O_o.getParam('q', url);
+&lt;/script&gt;
+</code></pre>
+  </div>
   <!-- Templates-->
   <div class="page-header">
     <h3 id="go_templates">Templates</h3>
