@@ -48,16 +48,49 @@
         return attrMap;
     };
 
+    O_o.getParams = function (url) {
+        var attrs = [],
+            params = [],
+            attrMap = [],
+            url = url == undefined ? location.search : url;
+        if (url != '') {
+            attrs = (url.substr(1)).split('&'); // разделяем переменные
+            for (var i = 0; i < attrs.length; i++) {
+                params = attrs[i].split('='); // массив param будет содержать
+                attrMap[params[0]] = params[1]; // пары ключ(имя переменной)->значение
+                if (params[0].match(/\[.+\]/)) {
+                    property = params[0].replace(/\[.+\]/, '');
+                    key_id = params[0].replace(/\w+\[(.+)\]/, "$1");
+                    val = params[1];
+                    if (attrMap[property] === undefined) {
+                        attrMap[property] = [];
+                    }
+                    attrMap[property][key_id] = val;
+                }
+            }
+        }
+        return attrMap;
+    };
+
+    O_o.getParam = function (key_name, url) {
+        var params = O_o.getParams(url);
+        if (typeof params[key_name] == 'function')
+            params[key_name] = undefined
+
+        if (params[key_name] != undefined)
+            return params[key_name];
+        return false;
+    };
 
     O_o.scrollTop = function(set_position) {
         if (set_position == undefined)
             set_position = 0;
-        $("html:not(:animated),body:not(:animated)").animate({
-            scrollTop: set_position
-        }, 1000);
-    };
+            $("html:not(:animated),body:not(:animated)").animate({
+                scrollTop: set_position
+            }, 1000);
+        };
 
-    O_o.scrollBottom = function() {
+        O_o.scrollBottom = function() {
         var document_height = $(document).height();
         O_o.scrollTop(document_height);
     };
