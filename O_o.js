@@ -275,14 +275,24 @@
         return month_id - 1;
     };
 
-    O_o.template = function(class_clone, holder_element, data) {
+    O_o.outerHTML = function(element) {
+        return $('<div />').append($(element).eq(0).clone()).html();
+    };
+
+    O_o.template = function(class_clone, holder_element, data, before) {
 
         var clone = $('.' + class_clone).clone(true);
         clone.show().removeClass(class_clone);
 
-        O_o._template_insert(clone, data);
-
-        $(holder_element).append(clone);
+        clone = O_o._template_insert(clone, data);
+        
+        if (before === undefined || before == false) {
+            $(holder_element).append(clone);
+        }
+        else
+        {
+            $(holder_element).prepend(clone);
+        }
     };
 
     O_o._template_insert = function(clone, data, pre) {
@@ -295,9 +305,11 @@
             if (data[ins] instanceof Object) {
                 O_o._template_insert(clone, data[ins], pre + ins + '.');
             } else {
-                clone.html(clone.html().replace('${' + pre + ins + '}', data[ins]));
+                clone = O_o.outerHTML(clone).replace('${' + pre + ins + '}', data[ins]);
             }
         }
+
+        return clone;
     };
 
     O_o.linkInsert = function(some_text) {
